@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function List({ task, deleteTask, onCheckedItem, editTask }) {
+export default function List({
+  task,
+  ondeleteTask,
+  onCheckedItem,
+  oneditTask,
+}) {
   return (
     <div>
       <ul>
@@ -12,11 +17,14 @@ export default function List({ task, deleteTask, onCheckedItem, editTask }) {
                 onClick={() => onCheckedItem(item)}
               >
                 {item.title}
-                <span className="close" onClick={(e) => deleteTask(item.id, e)}>
+                <span
+                  className="close"
+                  onClick={(e) => ondeleteTask(item.id, e)}
+                >
                   {"\u00D7"}
                 </span>
-                <span className="close" onClick={(e) => editTask(item.id, e)}>
-                  {"\u00D7"}
+                <span className="edit" onClick={(e) => oneditTask(item.id, e)}>
+                  {"E"}
                 </span>
               </li>
             }

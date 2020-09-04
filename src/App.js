@@ -34,7 +34,9 @@ function App() {
     setTask(newTask);
   }
 
-  function handleEditTask(id) {
+  function handleEditTask(id, e) {
+    e.stopPropagation();
+
     console.log(id);
   }
 
